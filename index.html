@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freelancing App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/d1c2ea8b80.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/9c5ca100bb.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header id="banner">
+      <div class="container">
+        <div class="header-top-section">
+          <h1><i class="fas fa-briefcase"></i> WorkIn</h1>
+          <div class="header-top-button-container" id="headerButtonContainer">
+            <a href="login.html"
+              ><button class="transparent-button">Login</button></a
+            >
+            <a href="registration.html"
+              ><button class="transparent-button" style="border: none">
+                Sign Up
+              </button></a
+            >
+          </div>
+          <div class="header-top-user-container" id="headerUserContainer">
+            <a href="profile.html">
+              <img
+                src="/profile.jpg"
+                id="userProfile"
+                class="homepage-user-profile"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="header-content">
+          <h2 class="header-h2">Find the Right Freelancer for Your Job</h2>
+          <p>
+            Connecting skilled workers with clients in need of their expertise.
+          </p>
+          <div class="search-bar-container">
+            <input
+              type="text"
+              class="search-bar"
+              placeholder="Search Freelancers.."
+            />
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End-->
+
+    <!-- Main Content Start-->
+    <main>
+      <div>
+        <hr class="options-bar-line" />
+      </div>
+      <div class="options-bar">
+        <button src="#" class="options-bar-button" onclick="createWorksCards()">
+          Available Works
+        </button>
+        <button
+          src="#"
+          class="options-bar-button"
+          onclick="createWorkersCards()"
+        >
+          Available Workers
+        </button>
+        <button src="#" class="options-bar-button">
+          <a
+            style="text-decoration: none; color: black"
+            href="create-worker-card.html"
+            >+ Create a Worker</a
+          >
+        </button>
+        <button src="#" class="options-bar-button">
+          <a
+            style="text-decoration: none; color: black"
+            href="create-work-card.html"
+          >
+            + Create Work</a
+          >
+        </button>
+        <!--<button src="#" class="options-bar-button">Teaching Works</button>
+      <button src="#" class="options-bar-button">Physical Works</button> -->
+      </div>
+      <div class="card-conatiner" id="cardContainer">
+        <!-- <div class="work-card" onclick="displayPaymentPage()">
+          <img src="/gardening.jpg" alt="work Image" class="work-image" />
+          <div class="work-info">
+            <span class="badge">BEST DOER</span>
+            <h2 class="work-title">
+              Gardening: The way i will take care the plants like childreans.
+            </h2>
+            <div class="work-rating">
+              <span class="rating-value">3.5</span>
+              <span class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="fa-regular fa-star"></i>
+              </span>
+              <span class="rating-count">(841)</span>
+              <span class="work-duration">• 1.3 hours</span>
+            </div>
+            <div class="work-author">
+              <span>by Jon Youshaei</span>
+              <p>
+                World's top gardener by Forbes, Entrepreneur and Inc Magazines;
+                Growing the plants since I have born with a love and
+                effectionate.
+              </p>
+            </div>
+            <div class="work-price">Rs: 800</div>
+          </div>
+        </div>
+        <div class="work-card" onclick="displayPaymentPage()">
+          <img src="/cleaning.jpg" alt="work Image" class="work-image" />
+          <div class="work-info">
+            <h2 class="work-title">
+              Cleaning: The most liked work work everyone, As me.
+            </h2>
+            <div class="work-rating">
+              <span class="rating-value">4.9</span>
+              <span class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </span>
+              <span class="rating-count">(841)</span>
+              <span class="work-duration">• 1.3 hours</span>
+            </div>
+            <div class="work-author">
+              <span>by Jon Youshaei</span>
+              <p>
+                World's top gardener by Forbes, Entrepreneur and Inc Magazines;
+                Growing the plants since I have born with a love and
+                effectionate.
+              </p>
+            </div>
+            <div class="work-price">Rs: 400</div>
+          </div>
+        </div>
+        <div class="work-card" onclick="displayPaymentPage()">
+          <img src="/haircut.jpg" alt="work Image" class="work-image" />
+          <div class="work-info">
+            <span class="badge">BEST DOER</span>
+            <h2 class="work-title">
+              Hair Cutting: The styles you like and the way you look better with
+              the haircut.
+            </h2>
+            <div class="work-rating">
+              <span class="rating-value">4.9</span>
+              <span class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </span>
+              <span class="rating-count">(841)</span>
+              <span class="work-duration">• 1.3 hours</span>
+            </div>
+            <div class="work-author">
+              <span>by Model</span>
+              <p>
+                World's top gardener by Forbes, Entrepreneur and Inc Magazines;
+                Growing the plants since I have born with a love and
+                effectionate.
+              </p>
+            </div>
+            <div class="work-price">Rs: 200</div>
+          </div>
+        </div> -->
+      </div>
+    </main>
+    <!-- Main Content End-->
+    <footer>
+      <div class="container">
+        <p>&copy; Workin. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="scripts.js"></script>
+  </body>
+</html>

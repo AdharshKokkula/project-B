@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorkIn Registration</title>
+    <link rel="stylesheet" href="registration.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="index.html">WorkIn</a></h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h2>Create Your Account</h2>
+        <form action="register.html" method="post" class="registration-form">
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full_name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone_number" />
+          </div>
+          <div class="form-group">
+            <label>User Type</label>
+            <label for="freelancer">
+              <input
+                type="radio"
+                id="freelancer"
+                name="user_type"
+                value="freelancer"
+                required
+              />
+              Freelancer
+            </label>
+            <label for="client">
+              <input
+                type="radio"
+                id="client"
+                name="user_type"
+                value="client"
+                required
+              />
+              Client
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="skills">Skills</label>
+            <select id="skills" name="skills">
+              <option value="Gardener">Gardener</option>
+              <option value="painter">Painter</option>
+              <option value="cheaf">Cheaf</option>
+              <option value="cleaner">Cleaner</option>
+              <option value="beautician">Beautician</option>
+              <option value="educator">Educator</option>
+              <option value="web-development">Web Development</option>
+              <option value="graphic-design">Graphic Design</option>
+              <option value="content-writing">Content Writing</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" required />
+          </div>
+          <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea id="bio" name="bio" rows="4"></textarea>
+          </div>
+          <div class="form-group terms-conditions-container">
+            <input type="checkbox" id="terms" class="terms-checkbox" required />
+            <label for="terms"> I agree to the terms and conditions</label>
+          </div>
+          <button type="submit" class="btn">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p>&copy; Workin. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      const form = document.querySelector(".registration-form");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+          data[key] = value;
+        });
+        console.log(data);
+        const response = await fetch("http://localhost:3000/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+          alert("Registration successful!");
+          window.location.href = "/login.html"; // Redirect to the home page
+        } else {
+          alert("Failed to register. Please try again.");
+        }
+      });
+    </script>
+  </body>
+</html>

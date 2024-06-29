@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorkIn - Payment Gateway</title>
+    <link rel="stylesheet" href="payment-gateway.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare
+.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-BS5hz2I+lkkRQNY66t1ow+ma76glsgBuPBJZlfdA4hdE1Yjgi9PBRF3dqBg8S6YCFhgKcJr+c+UibQPe7WTs4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="index.html">WorkIn</a></h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="payment-container">
+      <h2>Payment Gateway</h2>
+      <form action="process-payment.html" method="post" class="payment-form">
+        <div class="form-group">
+          <label for="cardname">Cardholder Name</label>
+          <input
+            type="text"
+            id="cardname"
+            name="cardname"
+            placeholder="Enter cardholder name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="cardnumber">Card Number</label>
+          <input
+            type="text"
+            id="cardnumber"
+            name="cardnumber"
+            placeholder="Enter card number"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="expiry">Expiry Date</label>
+          <input
+            type="text"
+            id="expiry"
+            name="expiry"
+            placeholder="MM/YY"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input
+            type="text"
+            id="cvv"
+            name="cvv"
+            placeholder="Enter CVV"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="billingaddress">Billing Address</label>
+          <input
+            type="text"
+            id="billingaddress"
+            name="billingaddress"
+            placeholder="Enter billing address"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            placeholder="Enter city"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="state">State</label>
+          <input
+            type="text"
+            id="state"
+            name="state"
+            placeholder="Enter state"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="zipcode">Zip Code</label>
+          <input
+            type="text"
+            id="zipcode"
+            name="zipcode"
+            placeholder="Enter zip code"
+            required
+          />
+        </div>
+        <button type="submit" class="btn">Submit Payment</button>
+      </form>
+    </div>
+    <footer>
+      <div class="container">
+        <p>&copy; Workin. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

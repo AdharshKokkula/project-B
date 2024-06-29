@@ -1,0 +1,4 @@
+ INSERT INTO work_details 
+ (image_src, job_title, category, description, location, payment, deadline, posted_by, rating)
+ VALUES ('${image_src}', '${job_title}', '${category}',  '${description}',  '${location}',  '${payment}',  '${deadline}',  '${posted_by}',  ${rating})
+        

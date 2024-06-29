@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work Card</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-dL6t5VP3E2T/Z0HtXpp5UUrBg0SeTQtc4I4B/tbThF8XBwPOmTZwE+4HzXh2pWz9+1Blrle3j57GKw0lP9qQSw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .work-card {
+        border: 1px solid #ccc;
+        padding: 16px;
+        width: 300px;
+      }
+      .work-image {
+        width: 100%;
+        height: auto;
+      }
+      .badge {
+        background-color: #ff0;
+        padding: 4px;
+      }
+      .work-title {
+        font-size: 1.2em;
+      }
+      .work-rating {
+        display: flex;
+        align-items: center;
+      }
+      .rating-stars {
+        display: flex;
+      }
+      .rating-stars i {
+        margin-right: 2px;
+      }
+      .work-author {
+        margin-top: 8px;
+      }
+      .work-price {
+        font-weight: bold;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      async function fetchWorkCardData() {
+        try {
+          const response = await fetch("http://localhost:3000/demo"); // Replace with your API endpoint
+          const data = await response.json();
+          createWorkCard(data);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      }
+
+      function createWorkCard(data) {
+        const container = document.getElementById("container");
+
+        data.forEach((item) => {
+          // Create the work card div
+          const workCard = document.createElement("div");
+          workCard.className = "work-card";
+          workCard.onclick = displayPaymentPage;
+
+          // Create the image element
+          const workImage = document.createElement("img");
+          workImage.src = item.image_src;
+          workImage.alt = "alternate.jpg";
+          workImage.className = "work-image";
+
+          // Create the work info div
+          const workInfo = document.createElement("div");
+          workInfo.className = "work-info";
+
+          // Create the badge span
+          const badge = document.createElement("span");
+          badge.className = "badge";
+          badge.textContent = item.badge;
+
+          // Create the work title h2
+          const workTitle = document.createElement("h2");
+          workTitle.className = "work-title";
+          workTitle.textContent = item.title;
+
+          // Create the work rating div
+          const workRating = document.createElement("div");
+          workRating.className = "work-rating";
+
+          // Create the rating value span
+          const ratingValue = document.createElement("span");
+          ratingValue.className = "rating-value";
+          ratingValue.textContent = item.rating_value;
+
+          // Create the rating stars span
+          const ratingStars = document.createElement("span");
+          ratingStars.className = "rating-stars";
+          for (let i = 0; i < 5; i++) {
+            const star = document.createElement("i");
+            if (i < Math.floor(item.rating_value)) {
+              star.className = "fas fa-star";
+            } else if (i < item.rating_value) {
+              star.className = "fas fa-star-half-alt";
+            } else {
+              star.className = "fa-regular fa-star";
+            }
+            ratingStars.appendChild(star);
+          }
+
+          // Create the rating count span
+          const ratingCount = document.createElement("span");
+          ratingCount.className = "rating-count";
+          ratingCount.textContent = `(${item.rating_count})`;
+
+          // Create the work duration span
+          const workDuration = document.createElement("span");
+          workDuration.className = "work-duration";
+          workDuration.textContent = `• ${item.duration}`;
+
+          // Append rating elements to work rating div
+          workRating.appendChild(ratingValue);
+          workRating.appendChild(ratingStars);
+          workRating.appendChild(ratingCount);
+          workRating.appendChild(workDuration);
+
+          // Create the work author div
+          const workAuthor = document.createElement("div");
+          workAuthor.className = "work-author";
+          workAuthor.innerHTML = `
+                <span>by ${item.author_name}</span>
+                <p>${item.author_description}</p>
+            `;
+
+          // Create the work price div
+          const workPrice = document.createElement("div");
+          workPrice.className = "work-price";
+          workPrice.textContent = item.price;
+
+          // Append all elements to work info div
+          workInfo.appendChild(badge);
+          workInfo.appendChild(workTitle);
+          workInfo.appendChild(workRating);
+          workInfo.appendChild(workAuthor);
+          workInfo.appendChild(workPrice);
+
+          // Append image and work info to work card
+          workCard.appendChild(workImage);
+          workCard.appendChild(workInfo);
+
+          // Append work card to container
+          container.appendChild(workCard);
+        });
+      }
+
+      function displayPaymentPage() {
+        alert("Displaying payment page...");
+      }
+
+      // Fetch data and create work card
+      fetchWorkCardData();
+    </script>
+  </body>
+</html>

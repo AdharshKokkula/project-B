@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Earnings - Workin</title>
+    <link rel="stylesheet" href="my-earnign.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-BS5hz2I+lkkRQNY66t1ow+ma76glsgBuPBJZlfdA4hdE1Yjgi9PBRF3dqBg8S6YCFhgKcJr+c+UibQPe7WTs4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="index.html">WorkIn</a></h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="earnings-container">
+      <h2>My Earnings</h2>
+      <div class="earnings-summary">
+        <div class="earnings-card">
+          <h3>Available funds</h3>
+          <p class="balance">Rs: 0.00</p>
+          <button class="btn disabled">Withdraw balance</button>
+          <p><a href="#">Manage payout methods</a></p>
+        </div>
+        <div class="earnings-card">
+          <h3>Future payments</h3>
+          <p class="balance">Rs: 0.00</p>
+          <p>Payments being cleared</p>
+          <p>Payments for active orders</p>
+          <p>Coming soon</p>
+        </div>
+        <div class="earnings-card">
+          <h3>Earnings & expenses</h3>
+          <p>Earnings to date</p>
+          <p class="balance">Rs: 0.00</p>
+          <p>Your earnings since joining.</p>
+          <p>Expenses to date</p>
+          <p class="balance">Rs: 0.00</p>
+          <p>Earnings spent on purchases since joining.</p>
+        </div>
+      </div>
+      <div class="filters">
+        <select>
+          <option>Date range</option>
+          <option>Last 7 days</option>
+          <option>Last 30 days</option>
+          <option>Last 90 days</option>
+        </select>
+        <select>
+          <option>Activity</option>
+          <option>Payments received</option>
+          <option>Payments sent</option>
+          <option>All activity</option>
+        </select>
+        <button class="btn email-report">
+          <i class="fas fa-envelope"></i> Email activity report
+        </button>
+      </div>
+      <div class="activity-log">
+        <p>Showing 0 results.</p>
+        <div class="no-results">
+          <img src="assets/empty-state.png" alt="No results" />
+          <p>Beginnings are so exciting!</p>
+          <p>
+            You’ll find all your earnings info here once you complete your first
+            order.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>&copy; Workin. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

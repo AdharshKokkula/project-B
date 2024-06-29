@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Gig - Freelancing App</title>
+    <link rel="stylesheet" href="create-gig.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-BS5hz2I+lkkRQNY66t1ow+ma76glsgBuPBJZlfdA4hdE1Yjgi9PBRF3dqBg8S6YCFhgKcJr+c+UibQPe7WTs4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="index.html">WorkIN</a></h1>
+        <nav>
+          <ul>
+            <li><a href="profile.html">Profile</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="gig-container">
+      <div class="gig-form">
+        <h2>Create a New Gig</h2>
+        <form action="submit-gig.html" method="post">
+          <div class="form-group">
+            <label for="title">Gig Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Enter gig title"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Describe your gig in detail"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="description">Gig Describing Photo (optional)</label>
+            <input type="file" id="file" name="file" />
+          </div>
+          <div class="form-group">
+            <label for="skills">Skills</label>
+            <input
+              type="text"
+              id="skills"
+              name="skills"
+              placeholder="Enter relevant skills, separated by commas"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="price">Price ($)</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Enter your price"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="availability">Availability</label>
+            <input
+              type="text"
+              id="availability"
+              name="availability"
+              placeholder="Enter your availability"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              placeholder="Enter your location"
+              required
+            />
+          </div>
+          <button type="submit" class="btn">Create Gig</button>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <p>&copy; Workin. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
