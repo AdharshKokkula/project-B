@@ -182,4 +182,14 @@ app.post("/create-work-card", async (request, response) => {
   response.send("Work Card Created");
 });
 
+app.get("/workers-data/:searchValue", async (reqest, response) => {
+  const { searchValue } = reqest.params;
+  const sqlGetQueryForWorkers = `SELECT * FROM workers_details WHERE title LIKE '%${searchValue}%';`;
+  const sqlGetQueryForWorks = `SELECT * FROM work_details WHERE job_title LIKE '%${searchValue}%';`;
+  const results_for_workers = await database.all(sqlGetQueryForWorkers);
+  const results_for_works = await database.all(sqlGetQueryForWorks);
+  const results = [results_for_workers, results_for_works];
+  response.send(results);
+});
+
 module.exports = app;
